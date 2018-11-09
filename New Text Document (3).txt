@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<cs50.h>
+#include<ctype.h>
+#include<math.h>
+int main(void)
+{
+int n,i,j=0;
+bool b=true;
+printf("Input number of elements array A\n");
+
+scanf("%d", &n);
+int r=n*2;
+printf("enter elements of array A\n");
+char A[r];
+for (i=0; i<r;i++){
+scanf("%c", &A[i]);
+}
+
+printf("{");
+for(i=0;i<r;i++)
+{
+printf("%c", A[i]);
+}
+printf("}\n");
+char U[26]={'q','w','e','r','t','y','u','i','o','p','l','k','j','h','g','f','d','s','a','z','x','c','v','b','n','m'};
+printf("addition to array A:\n");
+printf("{");
+for (int k=0;k<26;k++)
+{
+b=true;
+for(i=0;i<r;i++)
+ {
+ if(U[k]==A[i])
+  {
+  b=false;
+   	j++;
+  }
+ }
+ if(b)
+ {
+  printf("%c ",U[k]);
+ }
+}
+printf("}\n");
+int o = 26-j;
+int p= pow(2,o);
+printf("bulean=");
+printf("%d",p);
+return 0;
+}
